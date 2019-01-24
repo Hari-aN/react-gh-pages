@@ -138,6 +138,44 @@ The remainder of this document contains a tutorial on creating a React app (usin
 
     * I recommend exploring the GitHub repository once again at this point. When I did that, I noticed that a `master` branch now existed, and it contained the app's source code.
     * So, the `master` branch held the source code, and the `gh-pages` branch held the *built* app code.
+    
+ 9. **When, you run the npm run deploy command and get this error: fatal: A branch named 'gh-pages' already exists.
+    you simply have to do is...
+    **run command :  rm -rf node_modules/gh-pages/.cache**
+    or
+    Go to your project's node_modules/gh-pages and delete '.cache' folder. (Manually deleting works).
+    
+    then...
+    **run command : npm run deploy**
+    
+ 10. **Once you done with the above stufs you're almost done with the publish. if still there is any issue look at here all              posibilities**
+ **! [rejected]        master -> master (non-fast-forward)**
+error: failed to push some refs to 'https://github.com/haribhai/react-gh-pages.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+commit all changes before pull
+
+**run command : git pull origin master --allow-unrelated-histories**
+From https://github.com/haribhai/react-gh-pages
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+**run command : git push origin master**
+Enumerating objects: 35, done.
+Counting objects: 100% (35/35), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (33/33), 146.11 KiB | 6.64 MiB/s, done.
+Total 33 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas: 100% (11/11), done.
+To https://github.com/haribhai/react-gh-pages.git
+   f6ea09a..4f6ad43  master -> master
+   
+11.**Congratulations!,you have successfully Deployed a React Application to GitHub Pages.**
 
 # References
 
