@@ -139,15 +139,21 @@ The remainder of this document contains a tutorial on creating a React app (usin
     * I recommend exploring the GitHub repository once again at this point. When I did that, I noticed that a `master` branch now existed, and it contained the app's source code.
     * So, the `master` branch held the source code, and the `gh-pages` branch held the *built* app code.
     
- 9. **When, you run the npm run deploy command and get this error: fatal: A branch named 'gh-pages' already exists.
+ 9. **When, you run the npm run deploy command and get this error: fatal: A branch named 'gh-pages' already exists.**
     you simply have to do is...
-    **run command :  rm -rf node_modules/gh-pages/.cache**
+    ```
+    
+    $ rm -rf node_modules/gh-pages/.cache
+    
+    ```
     or
     Go to your project's node_modules/gh-pages and delete '.cache' folder. (Manually deleting works).
     
     then...
-    **run command : npm run deploy**
+    ```
+    $ npm run deploy
     
+    ```
  10. **Once you done with the above stufs you're almost done with the publish. if still there is any issue look at here all              posibilities**
  **! [rejected]        master -> master (non-fast-forward)**
 error: failed to push some refs to 'https://github.com/haribhai/react-gh-pages.git'
@@ -158,13 +164,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 commit all changes before pull
+ ```
+   
+   $ git pull origin master --allow-unrelated-histories
+    
+ ```
 
-**run command : git pull origin master --allow-unrelated-histories**
 From https://github.com/haribhai/react-gh-pages
  * branch            master     -> FETCH_HEAD
 Already up to date.
 
-**run command : git push origin master**
+ ```
+   
+   $ git push origin master
+    
+ ```
 Enumerating objects: 35, done.
 Counting objects: 100% (35/35), done.
 Delta compression using up to 4 threads
